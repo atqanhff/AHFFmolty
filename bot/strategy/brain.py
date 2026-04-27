@@ -29,13 +29,13 @@ log = get_logger(__name__)
 
 # ── Weapon stats from combat-items.md ─────────────────────────────────
 WEAPONS = {
-    "fist": {"bonus": 0, "range": 0},
-    "dagger": {"bonus": 10, "range": 0},
-    "sword": {"bonus": 20, "range": 0},
-    "katana": {"bonus": 35, "range": 0},
-    "bow": {"bonus": 5, "range": 1},
-    "pistol": {"bonus": 10, "range": 1},
-    "sniper": {"bonus": 28, "range": 2},
+    "fist": {"bonus": 10, "range": 0},
+    "dagger": {"bonus": 50, "range": 0},
+    "sword": {"bonus": 70, "range": 0},
+    "katana": {"bonus": 85, "range": 0},
+    "bow": {"bonus": 45, "range": 2},
+    "pistol": {"bonus": 100, "range": 3},
+    "sniper": {"bonus": 280, "range": 5},
 }
 
 WEAPON_PRIORITY = ["katana", "sniper", "sword", "pistol", "dagger", "bow", "fist"]
@@ -160,8 +160,8 @@ def decide_action(view: dict, can_act: bool, memory_temp: dict = None) -> dict |
     hp = self_data.get("hp", 100)
     ep = self_data.get("ep", 10)
     max_ep = self_data.get("maxEp", 10)
-    atk = self_data.get("atk", 10)
-    defense = self_data.get("def", 5)
+    atk = self_data.get("atk", 50)
+    defense = self_data.get("def", 50)
     is_alive = self_data.get("isAlive", True)
     inventory = self_data.get("inventory", [])
     equipped = self_data.get("equippedWeapon")
